@@ -13,6 +13,8 @@ module.exports.createProduct = (req, res) => {
     price,
     description
   })
-    .then(product => res.json({ products: product }))
+    .then(product =>
+      res.json({ message: "Product added successfully.", products: product })
+    )
     .catch(err => res.json({ message: "Something went wrong.", error: err }));
 };
